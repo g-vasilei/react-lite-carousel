@@ -81,8 +81,6 @@ alt?: string
 
 ## License
 
----
-
 - Add a badge row (npm version, license, etc.)
 - Include a usage GIF or screenshot
 - Help publish it to npm
