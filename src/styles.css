@@ -1,0 +1,92 @@
+.carouselContainer {
+  position: relative;
+}
+
+.liteCarousel {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  position: relative;
+  z-index: 1;
+
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+
+  user-select: none;
+  pointer-events: none;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navArrowLeft {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+  cursor: pointer;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 8px;
+  z-index: 99;
+}
+
+.navArrowRight {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  cursor: pointer;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 8px;
+  z-index: 99;
+}
+
+@media only screen and (min-width: 768px) {
+  .navArrowLeft {
+    left: 3rem;
+  }
+  .navArrowRight {
+    right: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navArrowLeft {
+    left: 4rem;
+  }
+  .navArrowRight {
+    right: 4rem;
+  }
+}

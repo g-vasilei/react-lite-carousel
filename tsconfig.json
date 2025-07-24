@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Modern JavaScript
+    "module": "ESNext", // ESM format
+    "lib": ["DOM", "ESNext"], // Browser + ES libs
+    "jsx": "react-jsx", // React 17+ JSX transform
+    "declaration": true, // Emit .d.ts for type support
+    "declarationMap": true, // Map .d.ts to source for debugging
+    "outDir": "./dist", // Output compiled JS here
+    "rootDir": "./src", // Source root
+    "strict": true, // Enable all type safety checks
+    "esModuleInterop": true, // Allow `import x from 'commonjs'`
+    "moduleResolution": "Node", // Standard node-style imports
+    "skipLibCheck": true // Skip checking `node_modules` types
+  },
+  "include": ["src/index.ts", "src/ReactLiteCarousel.tsx"],
+  "exclude": ["node_modules", "dist"]
+}
