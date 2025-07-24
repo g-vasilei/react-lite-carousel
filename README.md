@@ -50,6 +50,10 @@ const images = [
 />;
 ````
 
+---
+
+## Props
+
 | Prop              | Type              | Default                 | Description                                               |
 | ----------------- | ----------------- | ----------------------- | --------------------------------------------------------- |
 | `images`          | `CarouselImage[]` | Demo placeholder images | Array of image objects with `src` and optional `alt` text |
