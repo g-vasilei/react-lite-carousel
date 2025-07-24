@@ -11,7 +11,6 @@ export type ReactLiteCarouselProps = {
   images?: CarouselImage[]
   leftArrowClass?: string
   rightArrowClass?: string
-  maxWidth?: string
   height?: string
   autoPlay?: boolean
   autoPlayInterval?: number
