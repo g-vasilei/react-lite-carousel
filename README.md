@@ -62,6 +62,8 @@ const images = [
 | `rightArrowClass` | `string`          | `''`                    | Additional CSS class for right arrow                      |
 | `height`          | `string`          | `'50vh'`                | Height of the carousel container (`px`, `vh`, etc.)       |
 
+---
+
 ## CarouselImage
 
 type CarouselImage = {
