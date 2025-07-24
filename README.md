@@ -77,8 +77,6 @@ alt?: string
 
 ---
 
-This is **a full single-file README**. No extra files needed. Let me know if you'd like me to:
-
 - Add a badge row (npm version, license, etc.)
 - Include a usage GIF or screenshot
 - Help publish it to npm
