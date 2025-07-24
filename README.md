@@ -84,5 +84,3 @@ alt?: string
 - Add a badge row (npm version, license, etc.)
 - Include a usage GIF or screenshot
 - Help publish it to npm
-
-Let me know what name you're publishing under and I can even scaffold `package.json` for you.
