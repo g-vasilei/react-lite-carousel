@@ -12,6 +12,7 @@ It supports infinite looping, touch and mouse dragging, and easy customization w
 - Lightweight and dependency-free
 - Lazy-loaded images
 - Customizable dimensions and arrows
+- Autoplay
 
 ---
 
@@ -47,6 +48,8 @@ const images = [
   height="60vh"
   leftArrowClass="custom-left-arrow"
   rightArrowClass="custom-right-arrow"
+  autoPlay={true}
+  autoPlayInterval={5000}
 />;
 ````
 
@@ -54,13 +57,15 @@ const images = [
 
 ## Props
 
-| Prop              | Type              | Default                 | Description                                               |
-| ----------------- | ----------------- | ----------------------- | --------------------------------------------------------- |
-| `images`          | `CarouselImage[]` | Demo placeholder images | Array of image objects with `src` and optional `alt` text |
-| `isInfinite`      | `boolean`         | `false`                 | Enables infinite looping mode                             |
-| `leftArrowClass`  | `string`          | `''`                    | Additional CSS class for left arrow                       |
-| `rightArrowClass` | `string`          | `''`                    | Additional CSS class for right arrow                      |
-| `height`          | `string`          | `'50vh'`                | Height of the carousel container (`px`, `vh`, etc.)       |
+| Prop               | Type              | Default                 | Description                                               |
+| ------------------ | ----------------- | ----------------------- | --------------------------------------------------------- |
+| `images`           | `CarouselImage[]` | Demo placeholder images | Array of image objects with `src` and optional `alt` text |
+| `isInfinite`       | `boolean`         | `false`                 | Enables infinite looping mode                             |
+| `leftArrowClass`   | `string`          | `''`                    | Additional CSS class for left arrow                       |
+| `rightArrowClass`  | `string`          | `''`                    | Additional CSS class for right arrow                      |
+| `height`           | `string`          | `'50vh'`                | Height of the carousel container (`px`, `vh`, etc.)       |
+| `autoPlay`         | `boolean`         | `false`                 | Enables automatic slide transition                        |
+| `autoPlayInterval` | `number`          | `5000`                  | Time (in ms) between auto slides when `autoPlay` is true  |
 
 ---
 

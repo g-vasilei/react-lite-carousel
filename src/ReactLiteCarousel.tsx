@@ -13,6 +13,8 @@ export type ReactLiteCarouselProps = {
   rightArrowClass?: string
   maxWidth?: string
   height?: string
+  autoPlay?: boolean
+  autoPlayInterval?: number
 }
 
 const defaultImages: CarouselImage[] = [
@@ -36,9 +38,10 @@ export default function ReactLiteCarousel({
   leftArrowClass = '',
   rightArrowClass = '',
   height = '50vh',
+  autoPlay = false,
+  autoPlayInterval = 5000,
 }: ReactLiteCarouselProps) {
   const extendedImages = isInfinite ? [images[images.length - 1], ...images, images[0]] : images
-
   const [index, setIndex] = useState(isInfinite ? 1 : 0)
   const [isTransitioning, setIsTransitioning] = useState(true)
   const [startX, setStartX] = useState<number | null>(null)
@@ -60,40 +63,36 @@ export default function ReactLiteCarousel({
 
   const handleTransitionEnd = () => {
     if (!isInfinite) return
-
     if (index === 0) {
       setIsTransitioning(false)
-      requestAnimationFrame(() => {
-        setIndex(images.length)
-      })
+      requestAnimationFrame(() => setIndex(images.length))
     } else if (index === images.length + 1) {
       setIsTransitioning(false)
-      requestAnimationFrame(() => {
-        setIndex(1)
-      })
+      requestAnimationFrame(() => setIndex(1))
     }
   }
 
-  // Re-enable transitions after jump completes
   useEffect(() => {
     if (!isTransitioning) {
-      requestAnimationFrame(() => {
-        setIsTransitioning(true)
-      })
+      requestAnimationFrame(() => setIsTransitioning(true))
     }
   }, [isTransitioning])
 
   const finishDrag = (deltaX: number) => {
     const threshold = 50
-    if (deltaX > threshold) {
-      handleArrow('l')
-    } else if (deltaX < -threshold) {
-      handleArrow('r')
-    }
+    if (deltaX > threshold) handleArrow('l')
+    else if (deltaX < -threshold) handleArrow('r')
     setStartX(null)
     setIsDragging(false)
     setDragOffset(0)
   }
+
+  // Autoplay
+  useEffect(() => {
+    if (!autoPlay) return
+    const timer = setInterval(() => handleArrow('r'), autoPlayInterval)
+    return () => clearInterval(timer)
+  }, [index, autoPlay, autoPlayInterval])
 
   // Touch events
   const handleTouchStart = (e: React.TouchEvent) => {
